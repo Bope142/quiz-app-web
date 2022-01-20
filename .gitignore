@@ -2,6 +2,6 @@
 *.css.map
 *.scss.map
 *.scss.map
-/css/scss/*.scss
+/css/scss/*
 /css/*.css.map
 keyapp.txt

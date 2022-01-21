@@ -5,3 +5,5 @@
 /css/scss/*
 /css/*.css.map
 keyapp.txt
+/images/*.svg
+*.svg

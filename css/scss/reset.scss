@@ -40,7 +40,10 @@ h6 {
 ul {
     list-style: none
 }
-
+*{
+    user-select: none !important;
+    outline: none !important;
+}
 button,
 input,
 select {

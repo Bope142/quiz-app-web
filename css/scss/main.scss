@@ -6,6 +6,7 @@ body{
   font-family: $font-Regular,sans-serif;
   position: relative;
   height: 100vh;
+  display: flex;
 }
 
 .container{
@@ -16,6 +17,8 @@ body{
   height: auto;
   background:white;
   grid-gap:15px;
+  flex: none;
+  width: 100%;
 }
 .title-section{
   font-family: $font-Bold;
@@ -45,31 +48,7 @@ body{
     }
 }
 
-.swiper-container{
-margin-top: 100px !important;
-}
 
-.next-menu{
-    flex: none;
-    border-radius:3px;
-    padding:10px 35px;
-    display: flex;
-    align-items:center;
-    justify-content: center;
-    background-image: linear-gradient(to right top, #600200, #700514, #7f0926, #89003b, #900053);
-    color: white;
-    position: fixed;
-    left: 50%;
-    top: 90%;
-    transform: translateX(-50%);
-    transition:all 0.2s linear;
-    z-index: 15000;
-}
-.next-btn-show{
-    transform: translateX(-50%) scale(1.0);
-     -webkit-animation: pulse1 2s infinite;
-    animation: pulse1 2s infinite;
-}
 @-webkit-keyframes pulse1 {
     0% {
         box-shadow: 0 0 0 0 rgba(136, 1, 56, 0.9);
@@ -86,4 +65,45 @@ margin-top: 100px !important;
     70% {
         box-shadow: 0 0 0 15px rgba(136, 1, 56, 0);
     }
+}
+
+.footer__nevigation{
+
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    background-image: linear-gradient(to right top, #601c00, #701514, #7e0926, #89003b, #900053);
+    display: flex;
+    flex-direction: row;
+    flex: none;
+    bottom:0;
+    z-index: 3000;
+    justify-content: space-between;
+    align-items:center;
+    & .nav-btn{
+        flex: none;
+    border-radius:3px;
+    padding:10px 35px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    background: white;
+    border:none;
+    font-family: $font-Medium;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    transition: all 0.2s linear;
+    opacity: 0.5;
+    cursor: pointer;
+    font-size: 1rem;
+    }
+    & .nav-btn-active{
+    opacity: 1.0 ;
+}
+}
+
+.back{
+    margin-left: 10px;
+}
+.next{
+    margin-right: 10px;
 }

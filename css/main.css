@@ -237,41 +237,65 @@ li {
   transform: scale(1.2) !important;
 }
 
-.content-slide {
+.app-content {
   display: flex;
+  height: auto;
+  margin-bottom: 100px;
+  margin-top: 100px;
+  flex-direction: column;
+  width: 100% !important;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.content-slide {
+  display: none;
   flex-direction: column;
   grid-gap: 25px;
   padding: 20px;
-  height: 100% !important;
+  height: auto !important;
   flex: none;
-  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 100%;
+  transform: scale(0);
+  transition: all 0.2s linear;
+}
+
+.content-hide {
+  transform: scale(0);
+  display: none;
+}
+
+.content-show {
+  transform: scale(1);
+  display: flex;
 }
 
 .quiz-number {
   display: flex;
   flex-direction: column;
-  grid-gap: 35px;
+  grid-gap: 50px;
 }
-
-input {
+.quiz-number input {
   border-radius: 2px;
   border: none;
-  padding: 20px;
+  height: 50px;
   background: white;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
   align-self: center;
-  width: 50px;
+  width: 80px;
   font-family: "Poppins-Bold";
   font-size: 1.2rem;
   text-align: center;
   transition: all 0.2s linear;
 }
-input:hover {
+.quiz-number input:hover {
   background-image: linear-gradient(to right top, #601c00, #701514, #7e0926, #89003b, #900053);
   color: white;
 }
 
-button {
+.btn-go {
   flex: none;
   border-radius: 3px;
   padding: 20px 55px;
@@ -334,19 +358,144 @@ button {
 
 .container__quiz {
   position: absolute;
-  z-index: 5026000;
+  z-index: 5020006000;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: white;
+  width: 100% !important;
+  height: 100vh !important;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  grid-gap: 15px;
+  flex-direction: column;
+  transform: scale(0);
+  transition: all 0.2s linear;
+  display: none;
+}
+
+.quiz_content_visible {
+  display: flex;
+  transform: scale(1) translate(-50%, -50%);
+}
+
+.quiz__header {
+  height: 100px;
+  background-image: linear-gradient(to right top, #601c00, #701514, #7e0926, #89003b, #900053);
+  display: flex;
+  flex-direction: column;
+  flex: none;
   width: 100%;
-  height: 100%;
+  position: fixed;
+}
+.quiz__header .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  padding: 10px;
+  flex: none;
+  overflow: hidden;
+}
+.quiz__header .title .time {
+  display: flex;
+  grid-gap: 15px;
+  flex: none;
+  border: 1px solid white;
+  padding: 5px 10px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+}
+.quiz__header .title .time svg {
+  height: 1rem;
+  width: 1rem;
+}
+.quiz__header .title .time .time-quiz {
+  color: white;
+}
+
+.quiz_number {
+  font-family: "Poppins-Bold";
+  font-size: 1.2rem;
+  color: white;
+}
+
+.quiz__content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  padding-top: 150px;
+  height: auto;
+  grid-gap: 30px;
+}
+
+.question {
+  height: auto;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 35px;
+}
+
+.quiz__text {
+  font-family: "Poppins-Bold";
+  text-align: left;
+  height: auto;
+}
+
+.quiz__answers {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 20px;
+}
+.quiz__answers .answers {
+  flex: none;
+  padding: 20px 15px;
+  display: flex;
+  align-items: center;
+  font-family: "Poppins-Medium";
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, #d1d5db 0px 0px 0px 1px inset;
+  background: white;
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+.quiz__answers .answer-correct {
+  background: #28a745;
+  color: white;
+}
+.quiz__answers .answer-incorrect {
+  background: #dc3545;
+  color: white;
+}
+
+.next-quiz {
+  background: #17a2b8 !important;
+}
+
+.quit,
+.next-quiz {
+  align-self: center;
+  border-radius: 3px;
+  padding: 10px 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to right top, #600200, #700514, #7f0926, #89003b, #900053);
+  color: white;
+  transition: all 0.2s linear;
+  z-index: 15000;
+  border: none;
+  font-family: "Poppins-Bold";
+  align-self: center;
 }
 
 body {
   font-family: "Poppins-Regular", sans-serif;
   position: relative;
   height: 100vh;
+  display: flex;
 }
 
 .container {
@@ -357,6 +506,8 @@ body {
   height: auto;
   background: white;
   grid-gap: 15px;
+  flex: none;
+  width: 100%;
 }
 
 .title-section {
@@ -386,33 +537,6 @@ body {
   text-align: center;
 }
 
-.swiper-container {
-  margin-top: 100px !important;
-}
-
-.next-menu {
-  flex: none;
-  border-radius: 3px;
-  padding: 10px 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: linear-gradient(to right top, #600200, #700514, #7f0926, #89003b, #900053);
-  color: white;
-  position: fixed;
-  left: 50%;
-  top: 90%;
-  transform: translateX(-50%);
-  transition: all 0.2s linear;
-  z-index: 15000;
-}
-
-.next-btn-show {
-  transform: translateX(-50%) scale(1);
-  -webkit-animation: pulse1 2s infinite;
-  animation: pulse1 2s infinite;
-}
-
 @-webkit-keyframes pulse1 {
   0% {
     box-shadow: 0 0 0 0 rgba(136, 1, 56, 0.9);
@@ -428,6 +552,46 @@ body {
   70% {
     box-shadow: 0 0 0 15px rgba(136, 1, 56, 0);
   }
+}
+.footer__nevigation {
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  background-image: linear-gradient(to right top, #601c00, #701514, #7e0926, #89003b, #900053);
+  display: flex;
+  flex-direction: row;
+  flex: none;
+  bottom: 0;
+  z-index: 3000;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__nevigation .nav-btn {
+  flex: none;
+  border-radius: 3px;
+  padding: 10px 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: none;
+  font-family: "Poppins-Medium";
+  box-shadow: #ccdbe8 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  transition: all 0.2s linear;
+  opacity: 0.5;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.footer__nevigation .nav-btn-active {
+  opacity: 1;
+}
+
+.back {
+  margin-left: 10px;
+}
+
+.next {
+  margin-right: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */

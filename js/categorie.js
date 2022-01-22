@@ -1,3 +1,4 @@
+
 export const removeSelectionCategory = ( ) => {
     document.querySelectorAll( '.category' )
         .forEach( ( element, index ) => {

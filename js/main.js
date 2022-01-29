@@ -130,6 +130,7 @@ async function renderUsers( ) {
 
 
 window.addEventListener( 'load', ( ) => {
+
     document.querySelectorAll( '.click-category' )
         .forEach( ( element, index ) => {
 

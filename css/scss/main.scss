@@ -1,109 +1,188 @@
 @import './reset.scss';
 @import './variable.scss';
-@import './content-app.scss';
-@import './quiz.scss';
-body{
-  font-family: $font-Regular,sans-serif;
-  position: relative;
-  height: 100vh;
-  display: flex;
-}
 
-.container{
-  display: flex;
-  flex-direction: column;
-  overflow: hidden !important;
-  position: relative;
-  height: auto;
-  background:white;
-  grid-gap:15px;
-  flex: none;
-  width: 100%;
-}
-.title-section{
-  font-family: $font-Bold;
-  font-size: 1.5rem;
-}
-
-
-.app-header {
-    flex: none;
-    height: auto;
-    background-image: linear-gradient(to right top, #601c00, #701514, #7e0926, #89003b, #900053);
+body {
+    font-family: $font-Regular, sans-serif;
+    position: relative;
+    height: 100vh;
     display: flex;
+    background: rgba(31, 17, 71, 1.0);
+}
+
+.container {
+    display: none;
     flex-direction: column;
+    overflow: visible;
+    position: relative;
+    height: auto;
+    background: rgba(31, 17, 71, 1.0);
     grid-gap: 15px;
-    align-items: center;
-    padding: $padding-content;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
-    justify-content: center;
-    color: white;
-    position: fixed;
-    z-index: 40000;
+    flex: none;
     width: 100%;
-    & h3 {
+}
+
+.home__app {
+
+    flex-direction: column;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    height: auto;
+    grid-gap: 15px;
+    flex: none;
+    width: 100%;
+}
+
+
+
+.tab__active {
+    flex: none !important;
+    display: flex !important;
+    height: auto !important;
+
+}
+
+.tab__inactive {
+    display: none;
+}
+
+.header__tab {
+    flex: none;
+    height: 80px;
+    width: 100%;
+    background: rgb(50, 23, 125);
+    overflow: hidden;
+    position: fixed;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+    display: flex;
+    align-items: center;
+    z-index: 100000;
+
+    // justify-content:center;
+    & .back__tab {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background: rgb(31, 17, 71);
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+        margin-left: 20px;
+
+        & svg {
+            height: 1.5rem;
+            width: 1.5rem;
+        }
+    }
+
+    & .title__bar {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
         font-family: $font-Bold;
         font-size: 1.2rem;
+        color: #fff;
         text-align: center;
     }
+
 }
 
+.main__content {
+    padding: 100px 25px 100px 25px;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 50px;
+    overflow: hidden;
+    width: 100%;
 
-@-webkit-keyframes pulse1 {
-    0% {
-        box-shadow: 0 0 0 0 rgba(136, 1, 56, 0.9);
-    }
-    70% {
-        box-shadow: 0 0 0 15px rgba(136, 1, 56, 0);
-    }
-}
-
-@keyframes pulse1 {
-    0% {
-        box-shadow: 0 0 0 0 rgba(136, 1, 56, 0.9);
-    }
-    70% {
-        box-shadow: 0 0 0 15px rgba(136, 1, 56, 0);
+    & p {
+        font-family: $font-Regular;
+        font-size: 1.2rem;
+        color: #fff;
     }
 }
 
-.footer__nevigation{
-
+.footer__tab {
     position: fixed;
+    bottom: 0;
+    background: rgb(50, 23, 125);
     width: 100%;
     height: 80px;
-    background-image: linear-gradient(to right top, #601c00, #701514, #7e0926, #89003b, #900053);
     display: flex;
-    flex-direction: row;
-    flex: none;
-    bottom:0;
-    z-index: 3000;
     justify-content: space-between;
-    align-items:center;
-    & .nav-btn{
+    align-items: center;
+    z-index: 10000;
+    & .btn-control {
+        position: relative !important;
+        height: 50px;
+        width: 100px;
         flex: none;
-    border-radius:3px;
-    padding:10px 35px;
-    display: flex;
-    align-items:center;
-    justify-content: center;
-    background: white;
-    border:none;
-    font-family: $font-Medium;
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-    transition: all 0.2s linear;
-    opacity: 0.5;
-    cursor: pointer;
-    font-size: 1rem;
+        border-radius: 15px;
+        font-family: $font-Medium, sans-serif;
+        font-size: 1rem;
+        outline: 0;
+        border: 0;
+        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+        /* black with 30% opacity */
+        text-align: center;
+        color: #fff;
+        background-color: rgba(104, 72, 251,1.0);
+        font-family: $font-Medium, sans-serif;
+        font-size: 1rem;
+        outline: 0;
+        cursor: pointer;
+        transition: all 0.2s linear;
+        &:hover{
+            background-color: rgba(104, 72, 251,0.7);
+        }
     }
-    & .nav-btn-active{
-    opacity: 1.0 ;
-}
+    & .Next{
+            margin-right: 25px;
+        }
+        & .Previous{
+            margin-left: 25px;
+        }
 }
 
-.back{
-    margin-left: 10px;
-}
-.next{
-    margin-right: 10px;
+@import './ripple.scss';
+@import './home.scss';
+@import './category.scss';
+@import './level.scss';
+@import './count.scss';
+@import './quiz.scss';
+@import './result.scss';
+.appabout{
+    display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  grid-gap:10px;
+  overflow: hidden;
+  & svg{
+    width: 5rem;
+    height: 5rem;
+    transform: scale(1.0);
+    // animation: zoom 5s linear infinite;
+    margin-bottom: 25px;
+  }
+  & h1{
+    font-family: $font-Bold;
+    color: rgba(55, 234, 187, 1.0);
+    font-size: 2rem;
+  }
+  & p{
+    font-family: $font-Medium;
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+  }
+  & a{
+    text-decoration: none;
+    color: white;
+    opacity: 0.8;
+    margin-top: 20px;
+  }
 }

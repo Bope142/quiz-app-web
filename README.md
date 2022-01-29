@@ -11,3 +11,4 @@ Nous faisons un appel à une API gratuite fournissant les différentes questions
 Toutes contributions pour l’avancement de ce projet et la bienvenues.
 
 Pour plus d’informations écrivez moi : irnorbertyemuang@gmail.com 
+l'application est disponible qu'en anglais
